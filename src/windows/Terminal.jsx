@@ -1,18 +1,18 @@
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import { techStack } from "#constants/index.js";
 import { Check, Flag } from "lucide-react";
-import { WindowControlls } from "#components/index.js";
+import { WindowControls } from "#components/index.js";
 
 const Terminal = () => {
     return (
         <>
             <div id = "window-header">
-            <WindowControlls target="terminal" />
+            <WindowControls target="terminal" />
             <h2>Tech Stack</h2>
             </div>
             <div className= "techstack">
                 <p>
-                    <span className="font-bold">daniel@macfolio-pro ~ 
+                    <span className="font-bold">ayoub@macfolio-pro ~ 
                 </span>
                     show tech stack
                 </p>

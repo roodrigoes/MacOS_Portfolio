@@ -57,20 +57,18 @@ const Dock = () => {
     };
   }, []);
 
-  const toggleApp = (app) => {
-  //TODO Implement Open Window Logic
-    if (!app.canOpen) return;
+  const toggleApp = ({ id, canOpen }) => {
+    if (!canOpen) return;
 
-    const win = windows[app.id];
+    const win = windows[id];
     if (!win) return;
 
     if (win.isOpen) {
-        closeWindow(app.id);
+      closeWindow(id);
     } else {
-            openWindow(app.id);
-        }
-        console.log(win);
-    };
+      openWindow(id);
+    }
+  };
 
 
   return (

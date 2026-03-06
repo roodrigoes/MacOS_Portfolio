@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import useWindowStore from "#store/window.js";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -60,7 +59,6 @@ const renderText = (text,  className, baseWeight = 400) => {
   };
 
 const Welcome = () => {
-    const { openWindow } = useWindowStore();
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
 
