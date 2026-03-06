@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import useWindowStore from "#store/window.js";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -41,7 +42,7 @@ const renderText = (text,  className, baseWeight = 400) => {
       letters.forEach((letter) => {
         const { left: l, width: w } = letter.getBoundingClientRect();
         const distance = Math.abs(mouseX - (l - left + w / 2));
-        const intensity = Math.exp(-(distance ** 2) / 20000);
+        const intensity = Math.exp(-(distance ** 2) / 2000);
         animateLetter(letter, min + (max - min) * intensity);
       });
     };
@@ -59,6 +60,7 @@ const renderText = (text,  className, baseWeight = 400) => {
   };
 
 const Welcome = () => {
+    const { openWindow } = useWindowStore();
     const titleRef = useRef(null);
     const subtitleRef = useRef(null);
 
@@ -73,7 +75,7 @@ const Welcome = () => {
     }, []);
 
   return (
-   <section id="welcome">
+   <section id="welcome" className="max-sm:px-2">
     {/* Mobile notice: fixed at the very top; space appears BELOW it */}
     <div className="small-screen">
         <p className="text-center text-white font-mono text-base leading-6 tracking-wide">
